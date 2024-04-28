@@ -11,9 +11,14 @@ def fetch_poster(movie_id):
      full_path = "https://image.tmdb.org/t/p/w500/"+poster_path
      return full_path
 
+#movies = pickle.load(open("movies_list.pkl", 'rb'))
+#similarity = pickle.load(open("similarity.pkl", 'rb'))
+#movies_list=movies['title'].values
+
 movies = pickle.load(open("movies_list.pkl", 'rb'))
-similarity = pickle.load(open("similarity.pkl", 'rb'))
-movies_list=movies['title'].values
+similarity = fetch_pickle_data('https://drive.google.com/uc?export=download&id=1p_S_6nDObfz4wxWIOwWdGkhZXLili95p')
+movies_list = movies['title'].values
+
 
 st.header("Movie Recommender System")
 
